@@ -10,8 +10,8 @@
     <style>
         body {
             font-family: Forum, Helvetica, sans-serif;
-            color:#D7B684;
-            background-color:#092218;
+            color: #D7B684;
+            background-color: #092218;
             display: grid;
             place-items: center;
             padding: 0 10px;
@@ -27,12 +27,12 @@
             border-style: none none dotted;
         }
 
-        a { 
+        a {
             color: #D7B684;
             font-weight: bold;
         }
 
-        a:hover { 
+        a:hover {
             color: #B18259;
             font-weight: bold;
         }
@@ -77,12 +77,59 @@
             background-color: #223336;
             color: #D7B684;
             border-radius: 8px;
+            width: 100%;
+            max-width: 1000px;
         }
 
-        @media screen and (max-height: 450px) {
-            .sidenav {padding-top: 15px;}
-            .sidenav a {font-size: 18px;}
-            .sidenav p {font-size: 18px;}
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li + li {
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: #D7B684;
+            color: #092218;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 25px;
+        }
+
+        button:hover {
+            background-color: #B18259;
+        }
+
+        iframe {
+            margin-top: 20px;
+            border: 1px solid #D7B684;
+            border-radius: 8px;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .video-container iframe {
+            flex: 1;
+            min-width: 48%; /* Two videos side by side on big screens */
+            max-width: 48%;
+        }
+
+        mark {
+            background-color: #D7B684;
+            color: black;
         }
 
         @media screen and (max-width: 768px) {
@@ -106,6 +153,19 @@
             .sidenav p {
                 display: none;
             }
+
+            .video-container iframe {
+                min-width: 100%; /* Stack videos on smaller screens */
+                max-width: 100%;
+            }
+
+            button {
+                font-size: 18px;
+                padding: 10px;
+                width: 100%; /* Full width buttons on mobile */
+                margin: 5px 0;
+                text-align: center;
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -113,46 +173,17 @@
                 text-align: center;
                 float: none;
             }
-            sidenav p {
+
+            .sidenav p {
                 text-align: center;
                 float: none;
             }
-        }
 
-        button {
-            background-color: #D7B684;
-            color: #092218;
-            padding: 10px 20px;
-            margin: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 25px;
-            float: right;
-        }
-
-        button:hover {
-            background-color: #B18259;
-        }
-
-        iframe {
-            margin-top: 20px;
-            border: 1px solid #D7B684;
-            border-radius: 8px;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li + li {
-            margin-top: 10px;
-        }
-
-        mark {
-            background-color: #D7B684;
-            color: black;
+            button {
+                font-size: 16px;
+                padding: 8px;
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -176,7 +207,6 @@
     <button onclick="window.open('https://arxiv.org/a/son_j_2.html', '_blank')">arXiv</button>
     <button onclick="window.open('https://orcid.org/0000-0002-0236-5017', '_blank')">ORCID</button>
 
- 
     <h2>Preprints</h2>
     <hr>
     <ul>
@@ -213,21 +243,21 @@
         <li>
           <p style="font-size:25px; "> <strong>Catalysis in action via elementary thermal operations</strong></p>
           <p><mark>J. Son</mark> and N. H. Y. Ng<br>
-          <a href="https://doi.org/10.1088/1367-2630/ad2413" target="_blank">New J. Phys. 26, 033029 (2024)</a></p>
-        </li>
-    </ul>
-    <hr>
-    <h3>2022</h3>
-    <hr>
-    <ul>
-        <li>
-          <p style="font-size:25px; "> <strong>Charging quantum batteries via Otto machines: Influence of monitoring</strong></p>
-          <p><mark>J. Son</mark>, P. Talkner, and J. Thingna<br>
-          <a href="https://doi.org/10.1103/PhysRevA.106.052202" target="_blank">Phys. Rev. A 106, 052202 (2022)</a></p>
+          <a href="https://doi.org/10.22331/q-2024-07-25-1070" target="_blank">Quantum 8, 1070 (2024)</a></p>
         </li>
         <hr>
     </ul>
-    <h3>2021</h3>
+    <h2>2022</h2>
+    <hr>
+    <ul>
+        <li>
+            <p style="font-size:25px; "> <strong>Charging quantum batteries via Otto machines: Influence of monitoring</strong></p>
+            <p><mark>J. Son</mark>, P. Talkner, and J. Thingna<br>
+            <a href="https://doi.org/10.1103/PhysRevA.106.052202" target="_blank">Phys. Rev. A 106, 052202 (2022)</a></p>
+          </li>
+    </ul>
+    <hr>
+    <h2>2021</h2>
     <hr>
     <ul>
         <li>
@@ -238,16 +268,13 @@
         <hr>
     </ul>
 
-
-
-
     <p>Check out some presentations I gave:</p>
 
-    <!-- YouTube Video 1 -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/0Uiq_-ixpVs?si=VpgKDQDqBlpfdd0z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
-    <!-- YouTube Video 2 -->
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/JGDbUGp-4fI?si=thoCS9IX9KLx7ll_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <!-- Responsive Video Grid -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/0Uiq_-ixpVs?si=VpgKDQDqBlpfdd0z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/JGDbUGp-4fI?si=thoCS9IX9KLx7ll_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
 
 </main>
 

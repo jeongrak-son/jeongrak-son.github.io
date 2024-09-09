@@ -87,28 +87,24 @@
 
         .profile-container {
             display: flex;
-            align-items: stretch;
-            height: 100%;
+            flex-wrap: wrap; /* Allows text to wrap around the image */
+            align-items: flex-start; /* Aligns the text and image at the top */
         }
 
         .image {
-            flex: 1;
-            max-width: 30%;
+            flex: 0 1 30%;
+            margin-right: 20px; /* Space between the image and text */
         }
 
         .image img {
             width: 100%;
-            height: 100%;
+            height: auto;
             object-fit: cover; /* Ensures the image covers the container */
             border-radius: 8px;
         }
 
         .profile-text {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding-left: 20px;
         }
 
         .news {
@@ -154,11 +150,18 @@
 
             .profile-container {
                 flex-direction: column;
+                padding-left: 20px;
             }
 
             .image img {
                 width: 100%;
                 height: auto;
+            }
+
+            .news {
+                padding: 0; /* Removes inner padding on mobile */
+                margin: 0;  /* Removes outer margin on mobile */
+                border: none; /* Optional: remove the border to keep it clean */
             }
         }
 
@@ -198,14 +201,9 @@
             <p>Hi! I am a PhD student working on quantum information and quantum thermodynamics. Currently, I am based at Nanyang Technological University, Singapore as a part of In.Q group led by Nelly Ng.</p>
             <p>My main research focus is the concept of 'catalysis' in quantum processes, which is analogous but not identical to their more famous relative, chemical catalysis. In essence, catalysis is a process where an additional system called catalyst can be used, with the constraint that it must recover its original state. Because of this recovery, the same catalyst can be reused for an indefinite number of times.</p>
             <p>Recently, I am starting to broaden my research interests. I have been working on devising a dynamic programming approach of solving quantum recursions using circuits instructed by quantum states and exploring interplay of multiple resources. Check out my full list of publications in Publications tab.</p>
-        </div>
-    </div>
-    <hr>
-    <div class="square">
-        <div style="padding-left: 0px">
             <p>Besides physics, I am very passionate about films. To see my four favourites, check out my Letterboxed profile. To read my film reviews (published and unpublished) check out Film Reviews tab.</p>
         </div>
-    </div>
+    </div> 
     <hr>
     <div class="newshead">
         <h3 style="margin-top: 0%;">News</h3>
